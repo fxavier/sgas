@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  postgresdb:
+    image: postgres:15-alpine
+    container_name: sgas_postgresdb
+    restart: always
+    environment:
+      POSTGRES_USER: aias
+      POSTGRES_PASSWORD: aias
+      POSTGRES_DB: sgasdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker-volumes/postgres:/var/lib/postgresql/data
