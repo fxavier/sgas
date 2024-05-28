@@ -13,6 +13,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,8 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Document {
 
     @Id
@@ -38,7 +42,7 @@ public class Document {
     @Column(name = "nome_documento")
     private String documentName;
     @ManyToOne
-    @JoinColumn(name = "tipo_documento")
+    @JoinColumn(name = "tipo_documento_id")
     private DocumentType documentType;
     @Column(name = "local_arquivo")
     private String documentPath;
@@ -49,9 +53,9 @@ public class Document {
     private LocalDate retentionPeriod;
     @Column(name = "forma_eliminacao")
     private String disposalMethod;
-    @Column(name = "url")
-    private String url;
     @Column(name = "observacao")
     private String observation;
+
+    // Fields to be added
 
 }

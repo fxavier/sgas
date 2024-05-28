@@ -12,17 +12,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.10.1</quarkus.platform.version>
+        <quarkus.platform.version>3.9.1</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.2.5</surefire-plugin.version>
     </properties>
-    <!-- <repositories>
-        <repository>
-            <id>redgate</id>
-            <url>https://download.red-gate.com/maven/release</url>
-        </repository>
 
-    </repositories> -->
 
     <dependencyManagement>
     
@@ -39,35 +33,25 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.quarkiverse.jackson-jq</groupId>
-            <artifactId>quarkus-jackson-jq</artifactId>
-            <version>2.0.2</version>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-flyway</artifactId>
         </dependency>
-        <!-- <dependency>
-            <groupId>com.redgate.flyway</groupId>
-            <artifactId>flyway-core</artifactId>
-            <version>10.13.0</version>
-        </dependency> -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-openapi</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-orm-panache</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-jackson</artifactId>
-        </dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-jackson</artifactId>
+      </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-health</artifactId>
@@ -82,7 +66,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-orm</artifactId>
+            <artifactId>quarkus-resteasy-multipart</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -97,11 +81,14 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.32</version>
-            <scope>provided</scope>
+            <version>1.18.30</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-multipart-provider</artifactId>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
